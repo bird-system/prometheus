@@ -46,7 +46,7 @@ spec:
           - name: GF_AUTH_ANONYMOUS_ENABLED
             value: "false"
           - name: GF_INSTALL_PLUGINS
-            value: "kubernetes-app"
+            value: "grafana-kubernetes-app"
           # - name: GF_AUTH_ANONYMOUS_ORG_ROLE
           #   value: Admin
           # does not really work, because of template variables in exported dashboards:
