@@ -20,7 +20,7 @@ spec:
       - name: prometheus
         image: prom/prometheus:v1.7.0
         args:
-          - '-storage.local.retention=12h'
+          - '-storage.local.retention=14d'
           - '-storage.local.memory-chunks=500000'
           - '-config.file=/etc/prometheus/prometheus.yaml'
           - '-alertmanager.url=http://alertmanager:9093/'
@@ -39,7 +39,13 @@ spec:
           mountPath: /etc/prometheus
         - name: rules-volume
           mountPath: /etc/prometheus-rules
+        volumeMounts:
+        - name: prometheus-persistent-storage
+          mountPath: /prometheus
       volumes:
+      - name: prometheus-persistent-storage
+        persistentVolumeClaim:
+          claimName: prometheus
       - name: config-volume
         configMap:
           name: prometheus-core

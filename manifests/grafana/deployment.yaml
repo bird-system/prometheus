@@ -43,6 +43,8 @@ spec:
                 key: admin-password
           - name: GF_AUTH_ANONYMOUS_ENABLED
             value: "false"
+          - name: GF_INSTALL_PLUGINS
+            value: "kubernetes-app"
           # - name: GF_AUTH_ANONYMOUS_ORG_ROLE
           #   value: Admin
           # does not really work, because of template variables in exported dashboards:
@@ -59,4 +61,5 @@ spec:
           mountPath: /var/lib/grafana
       volumes:
       - name: grafana-persistent-storage
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: grafana
