@@ -15,7 +15,7 @@ spec:
         component: core
     spec:
       nodeSelector:
-        - function: monitoring
+        function: monitoring
       containers:
       - image: grafana/grafana:4.2.0
         name: grafana-core

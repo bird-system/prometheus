@@ -17,7 +17,7 @@ spec:
     spec:
       serviceAccountName: prometheus-k8s
       nodeSelector:
-        - function: monitoring
+        function: monitoring
       containers:
       - name: prometheus
         image: prom/prometheus:v1.7.0
