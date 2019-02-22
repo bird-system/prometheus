@@ -16,6 +16,8 @@ spec:
         component: core
     spec:
       serviceAccountName: prometheus-k8s
+      nodeSelector:
+        - function: monitoring
       containers:
       - name: prometheus
         image: prom/prometheus:v1.7.0
@@ -39,7 +41,6 @@ spec:
           mountPath: /etc/prometheus
         - name: rules-volume
           mountPath: /etc/prometheus-rules
-        volumeMounts:
         - name: prometheus-persistent-storage
           mountPath: /prometheus
       volumes:
