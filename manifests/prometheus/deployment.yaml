@@ -20,7 +20,7 @@ spec:
         function: monitoring
       containers:
       - name: prometheus
-        image: prom/prometheus:v1.7.0
+        image: prom/prometheus:v2.7.1
         args:
           - '-storage.local.retention=14d'
           - '-storage.local.memory-chunks=500000'

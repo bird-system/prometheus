@@ -17,7 +17,7 @@ spec:
       nodeSelector:
         function: monitoring
       containers:
-      - image: grafana/grafana:4.2.0
+      - image: grafana/grafana:5.4.3
         name: grafana-core
         imagePullPolicy: IfNotPresent
         # env:
