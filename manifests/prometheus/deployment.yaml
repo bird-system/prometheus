@@ -21,6 +21,10 @@ spec:
       containers:
       - name: prometheus
         image: prom/prometheus:v2.7.1
+        securityContext:
+          fsGroup: 2000
+          runAsUser: 1000
+          runAsNonRoot: true
         ports:
         - name: webui
           containerPort: 9090
