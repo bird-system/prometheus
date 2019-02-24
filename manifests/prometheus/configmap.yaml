@@ -235,7 +235,7 @@ data:
       # The relabeling allows the actual pod scrape to be configured
       # for all the declared ports (or port-free target if none is declared)
       # or only some ports.
-      - job_name: 'kubernetes-pods's
+      - job_name: 'kubernetes-pods'
 
         kubernetes_sd_configs:
         - role: pod
