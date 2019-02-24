@@ -21,11 +21,6 @@ spec:
       containers:
       - name: prometheus
         image: prom/prometheus:v2.7.1
-        args:
-          - '-storage.local.retention=14d'
-          - '-storage.local.memory-chunks=500000'
-          - '-config.file=/etc/prometheus/prometheus.yaml'
-          - '-alertmanager.url=http://alertmanager:9093/'
         ports:
         - name: webui
           containerPort: 9090
@@ -35,7 +30,7 @@ spec:
             memory: 500M
           limits:
             cpu: 500m
-            memory: 500M
+            memory: 1000M
         volumeMounts:
         - name: config-volume
           mountPath: /etc/prometheus
